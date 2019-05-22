@@ -2,7 +2,7 @@
   "name": "book-search",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://github.com/marcusbelcher/google-books-api-example",
+  "homepage": "/",
   "repository": {
     "type": "git",
     "url": "git@github.com:marcusbelcher/google-books-api-example.git"
@@ -11,7 +11,7 @@
   "author": "Marcus Belcher",
   "scripts": {
     "start": "REACT_APP_VERSION=$npm_package_version react-scripts start",
-    "build": "yarn test --coverage && REACT_APP_VERSION=$npm_package_version react-scripts build",
+    "build": "REACT_APP_VERSION=$npm_package_version react-scripts build",
     "test": "REACT_APP_VERSION=$npm_package_version react-scripts test",
     "test:debug": "REACT_APP_VERSION=$npm_package_version react-scripts --inspect-brk test --runInBand --no-cache",
     "test:coverage": "yarn test --coverage",
