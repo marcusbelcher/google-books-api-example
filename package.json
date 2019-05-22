@@ -2,7 +2,7 @@
   "name": "book-search",
   "version": "0.1.0",
   "private": false,
-  "homepage": "/",
+  "homepage": "https://marcusbelcher.github.io/google-books-api-example/",
   "repository": {
     "type": "git",
     "url": "git@github.com:marcusbelcher/google-books-api-example.git"
