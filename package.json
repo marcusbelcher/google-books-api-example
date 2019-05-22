@@ -1,8 +1,8 @@
 {
   "name": "book-search",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
-  "homepage": "https://marcusbelcher.github.io/google-books-api-example/",
+  "homepage": "https://marcusbelcher.github.io/google-books-api-example",
   "repository": {
     "type": "git",
     "url": "git@github.com:marcusbelcher/google-books-api-example.git"
@@ -12,6 +12,8 @@
   "scripts": {
     "start": "REACT_APP_VERSION=$npm_package_version react-scripts start",
     "build": "REACT_APP_VERSION=$npm_package_version react-scripts build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "test": "REACT_APP_VERSION=$npm_package_version react-scripts test",
     "test:debug": "REACT_APP_VERSION=$npm_package_version react-scripts --inspect-brk test --runInBand --no-cache",
     "test:coverage": "yarn test --coverage",
@@ -60,13 +62,14 @@
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-sonarjs": "^0.3.0",
     "faker": "^4.1.0",
+    "gh-pages": "^2.0.1",
     "jest-canvas-mock": "^2.1.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.17.1",
+    "snyk": "^1.166.1",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "3.4.5",
-    "snyk": "^1.166.1"
+    "typescript": "3.4.5"
   },
   "jest": {
     "collectCoverageFrom": [
