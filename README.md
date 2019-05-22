@@ -1,2 +1,3 @@
-# google-books-api-example
-Create react app demo to show results from the Google books API
+# Scaffold
+
+A simple scaffolded application utilising common technologies for web development
