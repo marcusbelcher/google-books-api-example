@@ -2,9 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.5] - 2019-05-26
+
+### Fixed
+
+-   Corrected CHANGELOG.md formatting
+
+## [0.1.4] - 2019-05-26
+
+### Fixed
+
+-   Hotfix applied to package.json to correct code coverage report
+
+## [0.1.3] - 2019-05-26
+
 ### Added
 
+-   Added Google Books API and associated tests
+
 ## [0.1.2] - 2019-05-24
+
+### Added
 
 -   Added pre-commit checks for code tests and linting via lint-staged and husky
 
