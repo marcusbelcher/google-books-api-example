@@ -46,6 +46,10 @@ Then:
 
 -   Add domain to https://console.developers.google.com/apis/credentials/domainverification to the required project
 
+### CRA Test Coverage
+
+Please see https://github.com/facebook/create-react-app/issues/6888 and https://github.com/facebook/jest/issues/8491. --watchAll=false is needed for TypeScript and Jest to output correct test coverage.
+
 ## Acknowledgements
 
 -   [Geers Lottie Animation by Alexandr Ponomarev](https://lottiefiles.com/askoldovich)
