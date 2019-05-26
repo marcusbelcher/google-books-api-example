@@ -17,8 +17,8 @@
     "lint-staged": "lint-staged",
     "test": "REACT_APP_VERSION=$npm_package_version react-scripts test",
     "test:debug": "REACT_APP_VERSION=$npm_package_version react-scripts --inspect-brk test --runInBand --no-cache",
-    "test:coverage": "yarn test --coverage",
-    "test:staged": "cross-env CI=true react-scripts test --coverage --env=jsdom --findRelatedTests",
+    "test:coverage": "yarn test --coverage  --watchAll=false",
+    "test:staged": "cross-env CI=true react-scripts test --coverage  --watchAll=false --env=jsdom --findRelatedTests",
     "start": "REACT_APP_VERSION=$npm_package_version react-scripts start"
   },
   "husky": {
