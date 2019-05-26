@@ -2,6 +2,8 @@
 
 Create react app demo to show results from the Google books API
 
+You can view the live demo [here](https://marcusbelcher.github.io/google-books-api-example/#/)
+
 ## Functionality
 
 -   Search [Google Books API](https://developers.google.com/api-client-library/javascript/start/start-js)

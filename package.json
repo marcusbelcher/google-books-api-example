@@ -1,8 +1,8 @@
 {
   "name": "book-search",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
-  "homepage": "https://github.com/marcusbelcher/google-books-api-example",
+  "homepage": "https://marcusbelcher.github.io/google-books-api-example",
   "repository": {
     "type": "git",
     "url": "git@github.com:marcusbelcher/google-books-api-example.git"
@@ -10,12 +10,29 @@
   "license": "MIT",
   "author": "Marcus Belcher",
   "scripts": {
-    "start": "REACT_APP_VERSION=$npm_package_version react-scripts start",
-    "build": "yarn test --coverage && REACT_APP_VERSION=$npm_package_version react-scripts build",
+    "build": "REACT_APP_VERSION=$npm_package_version react-scripts build",
+    "predeploy": "yarn run build",
+    "deploy": "yarn version --major && gh-pages -d build",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint-staged": "lint-staged",
     "test": "REACT_APP_VERSION=$npm_package_version react-scripts test",
     "test:debug": "REACT_APP_VERSION=$npm_package_version react-scripts --inspect-brk test --runInBand --no-cache",
     "test:coverage": "yarn test --coverage",
-    "lint": "eslint 'src/**/*.{ts,tsx}'"
+    "test:staged": "cross-env CI=true react-scripts test --coverage --env=jsdom --findRelatedTests",
+    "start": "REACT_APP_VERSION=$npm_package_version react-scripts start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "prettier --write",
+      "eslint src/ --fix",
+      "npm run test:staged",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,19 +71,23 @@
     "@types/react-router-dom": "^4.3.1",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-sonarjs": "^0.3.0",
     "faker": "^4.1.0",
+    "gh-pages": "^2.0.1",
+    "husky": "^2.3.0",
     "jest-canvas-mock": "^2.1.0",
+    "lint-staged": "^8.1.7",
     "node-sass": "^4.12.0",
     "prettier": "^1.17.1",
+    "snyk": "^1.166.1",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "3.4.5",
-    "snyk": "^1.166.1"
+    "typescript": "3.4.5"
   },
   "jest": {
     "collectCoverageFrom": [

@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+### Added
+
+## [0.1.2] - 2019-05-24
+
+-   Added pre-commit checks for code tests and linting via lint-staged and husky
+
+## [0.1.1] - 2019-05-22
+
+### Added
+
+-   gh-pages 3rd party added to package
+
+### Fixed
+
+-   Build and deploy to GitHub pages
+
 ## [0.1.0] - 2019-05-22
 
 ### Added
