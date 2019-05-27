@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2019-05-27
+
+### Changed
+
+-   Yarn deploy was used, package.json version moved to 1.0.0
+
 ## [0.2.0] - 2019-05-27
 
 ### Changed
