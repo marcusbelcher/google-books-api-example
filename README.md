@@ -61,10 +61,10 @@ On minor release revision gets reset to zero.
 -   Revision: Hotfix, minor changes e.g. footer name
 
 ### Development methodology
-- Do use feature/* branches. Once tested locally merge feature/* to develop.
+- Do use `feature/*` branches. Once tested locally merge feature/* to develop.
 - Do use VSCode with ESLint, Prettier formatter, SonarTS and SonarLint. The aim is for all code to be continuously tested, linted, and (complexity) analysed as development occurs to catch errors quickly. You can run `yarn test:coverage` during development. 
-- Do write classes with tests first (e.g. GoogleBooks.test.ts) before writing the visual Components e.g. <BookSearch />
-- Do abstract classes as much as you can. E.g. BookAPI.ts GoogleBooksAPI.ts interfaces and GoogleBooks.ts. It is expected to swap out the API in `actions/book.ts` to any other provider and the GUI, Store, etc, shouldn't require a refactor. 
+- Do write classes with tests first (e.g. `GoogleBooks.test.ts`) before writing the visual Components e.g. `<BookSearch />`
+- Do abstract classes as much as you can. E.g. `BookAPI.ts` `GoogleBooksAPI.ts` interfaces and `GoogleBooks.ts`. It is expected to swap out the API in `actions/book.ts` to any other provider and the GUI, Store, etc, shouldn't require a refactor. 
 - Keep everything strictly typed. In this example - due to timing - I broke this rule occasionally. However a big no no in the real world!
 
 ### Remaining wishlist
@@ -74,8 +74,8 @@ On minor release revision gets reset to zero.
 - Add in visual diff testing for components via [Puppeteer](https://github.com/GoogleChrome/puppeteer)
 - Add in a google-api offline mock for testing internal schema transformation from Google Book objects to Book objects. 
 - Experiment with white box testing
-- Add <url>/book/<id> route to show more information about a book and embed the google preview/reader widget
-- Add CI and auto generated QA links for feature/*, develop, staging, and master branches
+- Add `<url>/book/<id>` route to show more information about a book and embed the google preview/reader widget
+- Add CI and auto generated QA links for `feature/*`, `develop`, `staging`, and `master` branches. This does require moving deployment from GitHub to some CI service and to distribute builds via a cloud service such as AWS.
 - Add branch rules to enforce PRs, and stop people (including myself) commiting to master!
 - etc
 
