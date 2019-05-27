@@ -6,6 +6,7 @@ import Book from 'types/Book';
  */
 export interface State {
     isFetching: boolean;
+    hasData: boolean;
     data: Book[];
     query: string;
 }
@@ -14,6 +15,7 @@ export interface State {
  * Initial empty state
  */
 export const initialState: State = {
+    hasData: false,
     data: [],
     isFetching: false,
     query: '',
@@ -26,6 +28,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
     switch (action.type) {
         case ActionTypes.FETCHING: {
             return {
+                hasData: false,
                 data: [],
                 isFetching: true,
                 query: action.payload.query,
@@ -36,6 +39,7 @@ export const reducer = (state: State = initialState, action: Action): State => {
                 ...state,
                 data: action.payload.data,
                 isFetching: false,
+                hasData: action.payload.data.length > 0,
             };
         }
         default:

@@ -16,7 +16,7 @@ You can view the live demo [here](https://marcusbelcher.github.io/google-books-a
 
 ## Scripts
 
-Scripts are ased off [create-create-app](https://github.com/facebook/create-react-app)
+Scripts are based off [create-create-app](https://github.com/facebook/create-react-app)
 
 -   yarn install
 -   yarn start (serves on `localhost:3000`)
