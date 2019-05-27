@@ -1,4 +1,4 @@
-import BookAPI from 'interfaces/BookAPI';
+import BookAPI from 'types/BookAPI';
 
 export default interface GoogleBooksAPI extends BookAPI {
     getKey(): string | undefined;

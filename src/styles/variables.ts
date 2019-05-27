@@ -1,4 +1,4 @@
-import { ColorRGB, ColorHex } from '../interfaces/Color';
+import { ColorRGB, ColorHex } from 'types/Color';
 
 // Parity with SCSS Variables sheet
 export const COLOR_RED_RGB: ColorRGB = { r: 219, g: 68, b: 55 };

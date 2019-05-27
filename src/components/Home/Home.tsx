@@ -1,24 +1,41 @@
 import React from 'react';
 import Gears from '../Gears';
 import Styles from './Home.module.scss';
+import BookList from '../BookList';
+import BookSearch from '../BookSearch';
+import { State } from 'reducers';
+import { connect } from 'react-redux';
+import { isFetching } from 'selectors/books';
 import Typography from '@material-ui/core/Typography';
-import BuildIcon from '@material-ui/icons/Build';
 
-const Home: React.FC = (): JSX.Element => {
+interface Props {
+    fetching: boolean;
+}
+
+const Component: React.FC<Props> = (props: Props): JSX.Element => {
     return (
-        <div className={Styles.container}>
+        <section className={Styles.container}>
             <div>
-                <Gears />
-                <Typography variant="h6" gutterBottom>
-                    Template project
-                </Typography>
-                <Typography variant="body1">
-                    A simple scaffolded project utilising common frameworks.
-                    <BuildIcon />
-                </Typography>
+                {props.fetching ? (
+                    <div>
+                        <Gears />{' '}
+                        <Typography variant="body1" gutterBottom>
+                            Searching ...
+                        </Typography>
+                    </div>
+                ) : (
+                    <div>
+                        <BookSearch />
+                        <BookList />
+                    </div>
+                )}
             </div>
-        </div>
+        </section>
     );
 };
 
-export default Home;
+const mapStateToProps = (state: State): Props => ({
+    fetching: isFetching(state),
+});
+
+export default connect(mapStateToProps)(Component);
