@@ -1,6 +1,6 @@
 {
   "name": "book-search",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "private": false,
   "homepage": "https://marcusbelcher.github.io/google-books-api-example",
   "repository": {
@@ -17,8 +17,8 @@
     "lint-staged": "lint-staged",
     "test": "REACT_APP_VERSION=$npm_package_version react-scripts test",
     "test:debug": "REACT_APP_VERSION=$npm_package_version react-scripts --inspect-brk test --runInBand --no-cache",
-    "test:coverage": "yarn test --coverage",
-    "test:staged": "cross-env CI=true react-scripts test --coverage --env=jsdom --findRelatedTests",
+    "test:coverage": "yarn test --coverage  --watchAll=false",
+    "test:staged": "cross-env CI=true react-scripts test --coverage  --watchAll=false --env=jsdom --findRelatedTests",
     "start": "REACT_APP_VERSION=$npm_package_version react-scripts start"
   },
   "husky": {
@@ -52,13 +52,17 @@
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
-    "husky": "^2.3.0",
+    "axios": "^0.18.0",
     "material-design-icons": "^3.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-lottie": "^1.2.3",
+    "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
     "@types/faker": "^4.1.5",
@@ -69,7 +73,9 @@
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.3",
     "@types/react-lottie": "^1.2.2",
+    "@types/react-redux": "^7.0.9",
     "@types/react-router-dom": "^4.3.1",
+    "@types/redux-logger": "^3.0.7",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "cross-env": "^5.2.0",
@@ -80,10 +86,12 @@
     "eslint-plugin-sonarjs": "^0.3.0",
     "faker": "^4.1.0",
     "gh-pages": "^2.0.1",
+    "husky": "^2.3.0",
     "jest-canvas-mock": "^2.1.0",
     "lint-staged": "^8.1.7",
     "node-sass": "^4.12.0",
     "prettier": "^1.17.1",
+    "redux-logger": "^3.0.6",
     "snyk": "^1.166.1",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",

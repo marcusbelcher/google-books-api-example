@@ -2,9 +2,46 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2019-05-27
+
+### Changed
+
+-   Yarn deploy was used, package.json version moved to 1.0.0
+
+## [0.2.0] - 2019-05-27
+
+### Changed
+
+-   Removed App from footer
+-   Added now classed as Minor feature increase, not just patch/hotfix
+-   Home now utilises BookSearch and BookList components
+
 ### Added
 
+-   Redux, Redux-thunk, and state management for Book components
+-   Added BookSearch and BookList components for book searching
+
+## [0.1.5] - 2019-05-26
+
+### Fixed
+
+-   Corrected CHANGELOG.md formatting
+
+## [0.1.4] - 2019-05-26
+
+### Fixed
+
+-   Hotfix applied to package.json to correct code coverage report
+
+## [0.1.3] - 2019-05-26
+
+### Added
+
+-   Added Google Books API and associated tests
+
 ## [0.1.2] - 2019-05-24
+
+### Added
 
 -   Added pre-commit checks for code tests and linting via lint-staged and husky
 
