@@ -10,7 +10,7 @@ const Component: React.FC = (): JSX.Element => {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" color="inherit" className={Styles.grow}>
-                        Template App
+                        Book Search{' '}
                     </Typography>
                 </Toolbar>
             </AppBar>
