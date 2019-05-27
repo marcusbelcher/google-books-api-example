@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2019-05-27
+
+### Changed
+
+-   Styling and view changes to Home, BookList, BookSearch, NavBar
+-   Encountered errors in GoogleBooks.ts with images. Crude image logic to always have an image.
+
+### Removed
+
+-   Footer
+
 ## [1.0.0] - 2019-05-27
 
 ### Changed

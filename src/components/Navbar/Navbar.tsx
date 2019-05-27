@@ -10,7 +10,8 @@ const Component: React.FC = (): JSX.Element => {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" color="inherit" className={Styles.grow}>
-                        Book Search{' '}
+                        Library
+                        <div className={Styles.version}>{process.env.REACT_APP_VERSION}</div>
                     </Typography>
                 </Toolbar>
             </AppBar>

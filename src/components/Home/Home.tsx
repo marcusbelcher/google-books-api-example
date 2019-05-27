@@ -1,41 +1,59 @@
 import React from 'react';
-import Gears from '../Gears';
 import Styles from './Home.module.scss';
 import BookList from '../BookList';
 import BookSearch from '../BookSearch';
+import Gears from '../Gears';
 import { State } from 'reducers';
 import { connect } from 'react-redux';
-import { isFetching } from 'selectors/books';
-import Typography from '@material-ui/core/Typography';
+import { isFetching, hasData, getQuery } from 'selectors/books';
 
 interface Props {
-    fetching: boolean;
+    isFetching: boolean;
+    hasData: boolean;
+    query: string;
 }
 
-const Component: React.FC<Props> = (props: Props): JSX.Element => {
+const NoItemsComponent: React.FC = (): JSX.Element => {
     return (
-        <section className={Styles.container}>
-            <div>
-                {props.fetching ? (
-                    <div>
-                        <Gears />{' '}
-                        <Typography variant="body1" gutterBottom>
-                            Searching ...
-                        </Typography>
-                    </div>
-                ) : (
-                    <div>
-                        <BookSearch />
-                        <BookList />
-                    </div>
-                )}
-            </div>
-        </section>
+        <div className={Styles.noItemsContainer}>
+            <BookSearch />
+        </div>
     );
 };
 
+const ItemsLoadingComponent: React.FC = (): JSX.Element => {
+    return (
+        <div className={Styles.noItemsContainer}>
+            <Gears />
+        </div>
+    );
+};
+
+const HasItemsComponent: React.FC = (): JSX.Element => {
+    return (
+        <div className={Styles.hasItemsContainer}>
+            <BookSearch />
+            <BookList />
+        </div>
+    );
+};
+
+const Component: React.FC<Props> = (props: Props): JSX.Element => {
+    let c;
+    if (props.isFetching && props.query.length > 0) {
+        c = <ItemsLoadingComponent />;
+    } else if (props.hasData && props.query.length) {
+        c = <HasItemsComponent />;
+    } else {
+        c = <NoItemsComponent />;
+    }
+    return <section className={Styles.container}>{c}</section>;
+};
+
 const mapStateToProps = (state: State): Props => ({
-    fetching: isFetching(state),
+    isFetching: isFetching(state),
+    hasData: hasData(state),
+    query: getQuery(state),
 });
 
 export default connect(mapStateToProps)(Component);
