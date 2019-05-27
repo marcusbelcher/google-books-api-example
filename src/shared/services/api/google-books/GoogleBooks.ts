@@ -1,6 +1,6 @@
 import axios, { AxiosResponse, AxiosError } from 'axios';
 import GoogleBooksAPI from './GoogleBooksAPI';
-import Book from 'interfaces/Book';
+import Book from 'types/Book';
 import GoogleBook from './GoogleBook';
 import GoogleBooksAPIResults from './GoogleBooksResults';
 
@@ -12,10 +12,10 @@ export default class GoogleBooks implements GoogleBooksAPI {
             subtitle: book.volumeInfo.subtitle,
             publisher: book.volumeInfo.publisher,
             publishedDate: book.volumeInfo.publishedDate,
-            smallImage: book.volumeInfo.imageLinks.small,
-            largeImage: book.volumeInfo.imageLinks.large,
+            image: book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.large : undefined,
             link: book.volumeInfo.infoLink,
             rating: book.volumeInfo.averageRating,
+            thumbnail: book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.small : undefined,
         };
     }
 

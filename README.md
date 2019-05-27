@@ -50,6 +50,16 @@ Then:
 
 Please see https://github.com/facebook/create-react-app/issues/6888 and https://github.com/facebook/jest/issues/8491. --watchAll=false is needed for TypeScript and Jest to output correct test coverage.
 
+### Version methodology
+
+Version structure: `<major>.<minor>.<revision>`
+On major release minor and revision reset to zero.
+On minor release revision gets reset to zero.
+
+-   Major: Releases and breaking changes e.g. when Yarn deploy gets fired
+-   Minor: New features, substantial changes e.g. new API
+-   Revision: Hotfix, minor changes e.g. footer name
+
 ## Acknowledgements
 
 -   [Geers Lottie Animation by Alexandr Ponomarev](https://lottiefiles.com/askoldovich)

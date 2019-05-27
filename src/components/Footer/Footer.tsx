@@ -11,7 +11,7 @@ const Component: React.FC = (): JSX.Element => {
     const appVersion = process.env.REACT_APP_VERSION ? process.env.REACT_APP_VERSION : '#.#.#';
     return (
         <footer className={Styles.container}>
-            <Typography variant="body1">App v{appVersion}</Typography>
+            <Typography variant="body1">v{appVersion}</Typography>
         </footer>
     );
 };
