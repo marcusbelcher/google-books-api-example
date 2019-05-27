@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.0] - 2019-05-27
+
+### Changed
+
+-   Renamed App to Library Search, and ran yarn deploy
+
 ## [3.0.0] - 2019-05-27
 
 ### Changed
