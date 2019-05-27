@@ -1,14 +1,53 @@
 @import 'styles/variables.scss';
 
 .container {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
 
-    & > div:first-of-type {
-        padding: 1em;
+    .noItemsContainer {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+
+        & > section:first-of-type {
+            animation: scaleIn $animationMS, fadeIn $animationMS;
+            width: 50%;
+        }
+    }
+
+    .hasItemsContainer {
+        padding-top: $navHeight;
+        box-sizing: border-box;
+        animation: fadeIn $animationMS;
+
+        & > section:first-of-type {
+            width: 50%;
+        }
+        & > section:nth-of-type(2) {
+            width: 100%;
+        }
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

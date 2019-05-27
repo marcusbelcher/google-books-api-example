@@ -19,6 +19,13 @@ export const isFetching = createSelector(
     },
 );
 
+export const hasData = createSelector(
+    [getBooksState],
+    (state: Books.State): boolean => {
+        return state.hasData;
+    },
+);
+
 export const getQuery = createSelector(
     [getBooksState],
     (state: Books.State): string => {

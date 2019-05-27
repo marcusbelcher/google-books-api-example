@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
-import Footer from '../Footer/Footer';
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../Navbar';
 
 export interface Props {
     children: ReactNode;
@@ -11,7 +10,6 @@ const Component: React.FC<Props> = (props: Props): JSX.Element => {
         <React.Fragment>
             <Navbar />
             <section>{props.children}</section>
-            <Footer />
         </React.Fragment>
     );
 };
