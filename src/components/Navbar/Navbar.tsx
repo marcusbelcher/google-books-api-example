@@ -11,6 +11,7 @@ const Component: React.FC = (): JSX.Element => {
                 <Toolbar>
                     <Typography variant="h6" color="inherit" className={Styles.grow}>
                         Library
+                        <div className={Styles.version}>{process.env.REACT_APP_VERSION}</div>
                     </Typography>
                 </Toolbar>
             </AppBar>
